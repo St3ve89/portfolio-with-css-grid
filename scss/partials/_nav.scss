@@ -1,17 +1,22 @@
 .menu-button{
-  position: absolute;
+  position: fixed;
   top: 3em;
   left: 3em;
   background: transparent;
   border: 0;
+  transition: transform ease-in-out 250ms;
+  cursor: pointer;
 }
 nav {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 15%;
+  right: 20%;
   z-index: 10;
+
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms;
 }
 
 nav ul {
@@ -41,4 +46,35 @@ nav a {
   text-decoration: none;
   padding: 1em 0;
   width: 100%;
+}
+
+.close-icon {
+  display: none;
+}
+
+.nav-is-open {
+  nav{
+    transform: translateX(0);
+  }
+
+  .container-all {
+    transform: translateX(80%);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .close-icon{
+    display: block;
+  }
+
+  .menu-button {
+    position: fixed;
+    transform: translateX(-70%);
+  }
+}
+
+.container-all {
+  transition: transform ease-in-out 250ms;
 }

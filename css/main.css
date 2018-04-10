@@ -376,19 +376,23 @@ h2 {
       font-size: 3rem; } }
 
 .menu-button {
-  position: absolute;
+  position: fixed;
   top: 3em;
   left: 3em;
   background: transparent;
-  border: 0; }
+  border: 0;
+  transition: transform ease-in-out 250ms;
+  cursor: pointer; }
 
 nav {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 15%;
-  z-index: 10; }
+  right: 20%;
+  z-index: 10;
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms; }
 
 nav ul {
   margin: 0;
@@ -420,6 +424,28 @@ nav a {
   text-decoration: none;
   padding: 1em 0;
   width: 100%; }
+
+.close-icon {
+  display: none; }
+
+.nav-is-open nav {
+  transform: translateX(0); }
+
+.nav-is-open .container-all {
+  transform: translateX(80%); }
+
+.nav-is-open .hamburger {
+  display: none; }
+
+.nav-is-open .close-icon {
+  display: block; }
+
+.nav-is-open .menu-button {
+  position: fixed;
+  transform: translateX(-70%); }
+
+.container-all {
+  transition: transform ease-in-out 250ms; }
 
 .welcome {
   background-image: url(../img/header-bg.png);
